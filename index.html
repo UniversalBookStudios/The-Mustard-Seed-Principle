@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mustard Seed Principle: From Tiny Seeds, Great Lives Grow</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Style for the active (filled) habit tracker dot */
+        .habit-dot.active {
+            background-color: #22c55e; /* A satisfying green */
+            border-color: #22c55e;
+        }
+
+        /* Add a subtle transition for page visibility changes */
+        .page {
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Main Book Container -->
+    <main id="book" class="bg-slate-800 rounded-lg shadow-2xl w-full max-w-3xl overflow-hidden">
+        
+        <!-- Page 1: Cover & Introduction -->
+        <div id="page-1" class="page p-8 md:p-12">
+            <div class="text-center">
+                <!-- Sprout SVG Icon -->
+                <svg class="mx-auto h-16 w-16 text-green-400 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 20h10"/>
+                    <path d="M10 20c0-3.31 1.34-6 3-6s3 2.69 3 6"/>
+                    <path d="M12 14c0-2.21-1.79-4-4-4"/>
+                    <path d="M12 14c0-2.21 1.79-4 4-4"/>
+                    <path d="M12 10V4"/>
+                    <path d="M7 4h10"/>
+                </svg>
+                <h1 class="text-4xl md:text-5xl font-bold text-white">The Mustard Seed Principle</h1>
+                <h2 class="text-xl md:text-2xl text-green-300 mt-2">From Tiny Seeds, Great Lives Grow</h2>
+                <p class="text-slate-400 mt-6 max-w-2xl mx-auto">This is a micro-book for monumental change. An interactive guide to cultivating greatness.</p>
+            </div>
+            
+            <div class="mt-10">
+                <h3 class="text-2xl font-semibold text-white">Introduction: The Fallow Ground</h3>
+                <p class="mt-4 text-slate-300">Your potential is a field of fertile ground, but it lies fallow. You have the seeds of greatness within you, but without intentional planting, they cannot grow.</p>
+                <p class="mt-4 text-slate-300">This book isn't about waiting for a miraculous harvest. It’s about learning to plant one tiny <strong class="text-green-300">mustard seed</strong> at a time. Each seed is a small, almost effortless habit. But from it, great things can grow. This is the Mustard Seed Principle.</p>
+                <p class="mt-4 text-slate-300">We will use a simple system of four steps for cultivation:</p>
+                <ul class="list-disc list-inside mt-4 space-y-2 text-slate-300">
+                    <li><strong class="text-white">The Prompting:</strong> Making good habits obvious.</li>
+                    <li><strong class="text-white">The Invitation:</strong> Making them attractive.</li>
+                    <li><strong class="text-white">The First Step:</strong> Making them easy.</li>
+                    <li><strong class="text-white">The Harvest:</strong> Making them satisfying.</li>
+                </ul>
+            </div>
+            <div class="mt-12 text-center">
+                <button data-target="page-2" class="nav-btn bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                    Begin the Journey &rarr;
+                </button>
+            </div>
+        </div>
+
+        <!-- Page 2: Pillar 1 - The Prompting -->
+        <div id="page-2" class="page p-8 md:p-12 hidden">
+            <h2 class="text-3xl font-bold text-white">Pillar 1: The Prompting</h2>
+            <p class="text-green-300 text-lg">Make it Obvious</p>
+            
+            <div class="mt-6 border-t border-slate-700 pt-6">
+                <h3 class="text-xl font-semibold text-white">The Concept</h3>
+                <p class="mt-2 text-slate-300">A <em class="font-semibold text-green-300">Prompting</em> is a cue, a gentle nudge. To build a new habit, you must first design a prompting that is impossible to miss. You must see the cue to take the action.</p>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-white">The Example: The Student</h3>
+                <p class="mt-2 text-slate-300">Daniel wants to read a chapter of an inspiring book each morning but always gets lost on his phone. His new <em class="font-semibold text-green-300">Prompting</em>? He places the book on his pillow. He can't get out of bed without touching it.</p>
+            </div>
+            
+            <div class="mt-8 bg-slate-900/50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold text-white">How to Apply: Design Your Prompting</h3>
+                <div class="mt-4 space-y-4">
+                    <div>
+                        <label for="habit-1" class="block text-sm font-medium text-slate-300">1. The Habit I Want to Build is:</label>
+                        <input type="text" id="habit-1" class="mt-1 block w-full bg-slate-700 border-slate-600 rounded-md shadow-sm text-white focus:ring-green-500 focus:border-green-500" placeholder="e.g., Read 10 pages of a book daily">
+                    </div>
+                    <div>
+                        <label for="signal-new" class="block text-sm font-medium text-slate-300">2. Design Your New <em class="text-green-300">Prompting</em> (A visible cue in your path):</label>
+                        <input type="text" id="signal-new" class="mt-1 block w-full bg-slate-700 border-slate-600 rounded-md shadow-sm text-white focus:ring-green-500 focus:border-green-500" placeholder="e.g., Place the book on my favorite chair">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex justify-end">
+                <button data-target="page-3" class="nav-btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg transition">Next &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Page 3: Pillar 2 - The Invitation -->
+        <div id="page-3" class="page p-8 md:p-12 hidden">
+            <h2 class="text-3xl font-bold text-white">Pillar 2: The Invitation</h2>
+            <p class="text-green-300 text-lg">Make it Attractive</p>
+
+            <div class="mt-6 border-t border-slate-700 pt-6">
+                <h3 class="text-xl font-semibold text-white">The Concept</h3>
+                <p class="mt-2 text-slate-300">A habit needs an <em class="font-semibold text-green-300">Invitation</em>—a spark of desire. Link the habit you <strong class="text-white">need</strong> to do with a blessing you <strong class="text-white">want</strong> to enjoy. We call this "Joyful Pairing."</p>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-white">The Example: The Parent</h3>
+                <p class="mt-2 text-slate-300">Sarah wants to prepare healthy lunches for her kids, but often feels it's a chore. Her <em class="font-semibold text-green-300">Invitation</em>? She pairs the task with listening to her favorite uplifting podcast. The desire for the podcast pulls the good habit along.</p>
+            </div>
+
+             <div class="mt-8 bg-slate-900/50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold text-white">How to Apply: Create Your Joyful Pair</h3>
+                <div class="mt-4 space-y-4">
+                    <div>
+                        <label for="habit-2" class="block text-sm font-medium text-slate-300">1. The Habit I Need:</label>
+                        <input type="text" id="habit-2" class="mt-1 block w-full bg-slate-700 border-slate-600 rounded-md shadow-sm text-white focus:ring-green-500 focus:border-green-500" placeholder="e.g., Go for a 15-minute evening walk">
+                    </div>
+                    <div>
+                        <label for="temptation" class="block text-sm font-medium text-slate-300">2. The Joy I Want:</label>
+                        <input type="text" id="temptation" class="mt-1 block w-full bg-slate-700 border-slate-600 rounded-md shadow-sm text-white focus:ring-green-500 focus:border-green-500" placeholder="e.g., Call my best friend to catch up">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex justify-between">
+                <button data-target="page-2" class="nav-btn bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-6 rounded-lg transition">&larr; Back</button>
+                <button data-target="page-4" class="nav-btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg transition">Next &rarr;</button>
+            </div>
+        </div>
+        
+        <!-- Page 4: Pillar 3 - The First Step -->
+        <div id="page-4" class="page p-8 md:p-12 hidden">
+            <h2 class="text-3xl font-bold text-white">Pillar 3: The First Step</h2>
+            <p class="text-green-300 text-lg">Make it Easy</p>
+
+            <div class="mt-6 border-t border-slate-700 pt-6">
+                <h3 class="text-xl font-semibold text-white">The Concept</h3>
+                <p class="mt-2 text-slate-300">To get anywhere, you must take the <em class="font-semibold text-green-300">First Step</em>. Make this step so small it's effortless. Find the simplest, most graceful path forward. We use the "Two-Minute Rule."</p>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-white">The Example: The Creator</h3>
+                <p class="mt-2 text-slate-300">Aaron wants to learn a new skill but feels overwhelmed. His "Two-Minute Rule"? "I will just open the program and do <strong class="text-white">one small action</strong>." This tiny, easy <em class="font-semibold text-green-300">First Step</em> gets him started, and he often continues for much longer.</p>
+            </div>
+
+             <div class="mt-8 bg-slate-900/50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold text-white">How to Apply: Define Your First Step</h3>
+                <div class="mt-4 space-y-4">
+                    <div>
+                        <label for="habit-3" class="block text-sm font-medium text-slate-300">1. My Big Goal (The Mountain):</label>
+                        <input type="text" id="habit-3" class="mt-1 block w-full bg-slate-700 border-slate-600 rounded-md shadow-sm text-white focus:ring-green-500 focus:border-green-500" placeholder="e.g., Clean my entire apartment">
+                    </div>
+                    <div>
+                        <label for="two-minute-start" class="block text-sm font-medium text-slate-300">2. My Two-Minute First Step:</label>
+                        <input type="text" id="two-minute-start" class="mt-1 block w-full bg-slate-700 border-slate-600 rounded-md shadow-sm text-white focus:ring-green-500 focus:border-green-500" placeholder="e.g., Put just one thing back in its proper place">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex justify-between">
+                <button data-target="page-3" class="nav-btn bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-6 rounded-lg transition">&larr; Back</button>
+                <button data-target="page-5" class="nav-btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg transition">Next &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Page 5: Pillar 4 - The Harvest -->
+        <div id="page-5" class="page p-8 md:p-12 hidden">
+            <h2 class="text-3xl font-bold text-white">Pillar 4: The Harvest</h2>
+            <p class="text-green-300 text-lg">Make it Satisfying</p>
+
+            <div class="mt-6 border-t border-slate-700 pt-6">
+                <h3 class="text-xl font-semibold text-white">The Concept</h3>
+                <p class="mt-2 text-slate-300">The <em class="font-semibold text-green-300">Harvest</em> is the fruit of your labor. Your brain needs an immediate taste of this fruit for a habit to stick. It's a small, sweet token for a job well done.</p>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-white">The Example: The Steward</h3>
+                <p class="mt-2 text-slate-300">Maria wants to be a better steward of her finances. Her immediate <em class="font-semibold text-green-300">Harvest</em>? Every time she cooks instead of ordering out, she transfers the money she saved to a special account and watches the balance grow. It's a satisfying win.</p>
+            </div>
+
+            <div class="mt-8 bg-slate-900/50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold text-white">How to Apply: Your Visual Harvest</h3>
+                 <p class="mt-2 text-slate-400">Track your habit. Your only goal: <strong class="text-white">Don't break the chain.</strong> Each filled circle is your immediate reward.</p>
+                <div id="habit-chain" class="mt-4 flex flex-wrap gap-2 justify-center">
+                    <!-- 31 dots will be generated by JS -->
+                </div>
+            </div>
+
+            <div class="mt-10 flex justify-between">
+                <button data-target="page-4" class="nav-btn bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-6 rounded-lg transition">&larr; Back</button>
+                <button data-target="page-6" class="nav-btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition">Play the Game! &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Page 6: Game Intro -->
+        <div id="page-6" class="page p-8 md:p-12 hidden">
+             <div class="text-center">
+                <h2 class="text-3xl font-bold text-white">Game: The Habit Architect!</h2>
+                <p class="mt-4 text-slate-300 max-w-xl mx-auto">You've learned the principles. Now, let's put them into practice. Reading is good, but doing is better.</p>
+            </div>
+
+            <div class="mt-8 bg-slate-900/50 p-6 rounded-lg border border-green-400/50">
+                <h3 class="text-2xl font-semibold text-white text-center">The Scenario</h3>
+                <p class="text-center text-lg mt-4">Meet <strong class="text-green-300">Adam</strong>, a young professional.</p>
+                <div class="mt-4 grid md:grid-cols-2 gap-4 text-center">
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <h4 class="font-semibold text-white">His Goal:</h4>
+                        <p class="text-slate-300">Go to the gym 3 times a week after work.</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <h4 class="font-semibold text-white">His Problem:</h4>
+                        <p class="text-slate-300">He's "too tired," goes home, and watches TV instead.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                 <p class="text-lg mb-4">Your Mission: Design a foolproof habit system for Adam.</p>
+                <button data-target="page-7" class="nav-btn bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg transition">Let's Build!</button>
+            </div>
+             <div class="mt-10 flex justify-start">
+                <button data-target="page-5" class="nav-btn bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-6 rounded-lg transition">&larr; Back to Principles</button>
+            </div>
+        </div>
+
+        <!-- Page 7: Game Blueprint -->
+        <div id="page-7" class="page p-8 md:p-12 hidden">
+            <h2 class="text-3xl font-bold text-white text-center">The Habit Architect Blueprint</h2>
+            <div class="mt-6 space-y-6">
+                <div>
+                    <label for="game-ishara" class="block text-lg font-semibold text-green-300">1. The Prompting: How can we make the gym OBVIOUS?</label>
+                    <textarea id="game-ishara" rows="3" class="mt-2 block w-full bg-slate-700 border-slate-600 rounded-md shadow-sm text-white focus:ring-green-500 focus:border-green-500" placeholder="Hint: Think about his environment right after work..."></textarea>
+                </div>
+                 <div>
+                    <label for="game-chingari" class="block text-lg font-semibold text-green-300">2. The Invitation: How can we make the gym ATTRACTIVE?</label>
+                    <textarea id="game-chingari" rows="3" class="mt-2 block w-full bg-slate-700 border-slate-600 rounded-md shadow-sm text-white focus:ring-green-500 focus:border-green-500" placeholder="Hint: Pair it with something he desires..."></textarea>
+                </div>
+                 <div>
+                    <label for="game-kriya" class="block text-lg font-semibold text-green-300">3. The First Step: How can we make it EASY to start?</label>
+                    <textarea id="game-kriya" rows="3" class="mt-2 block w-full bg-slate-700 border-slate-600 rounded-md shadow-sm text-white focus:ring-green-500 focus:border-green-500" placeholder="Hint: Think 'Two-Minute Rule' and reducing friction..."></textarea>
+                </div>
+                 <div>
+                    <label for="game-phal" class="block text-lg font-semibold text-green-300">4. The Harvest: How can we make it SATISFYING?</label>
+                    <textarea id="game-phal" rows="3" class="mt-2 block w-full bg-slate-700 border-slate-600 rounded-md shadow-sm text-white focus:ring-green-500 focus:border-green-500" placeholder="Hint: What's an immediate, guilt-free reward?"></textarea>
+                </div>
+            </div>
+             <div class="mt-10 flex justify-between">
+                <button data-target="page-6" class="nav-btn bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-6 rounded-lg transition">&larr; Back to Scenario</button>
+                <button data-target="page-8" class="nav-btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition">Reveal the Blueprint &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Page 8: Conclusion -->
+        <div id="page-8" class="page p-8 md:p-12 hidden">
+             <h2 class="text-3xl font-bold text-white text-center">Blueprint Revealed & Your Own Harvest</h2>
+             <p class="mt-2 text-center text-slate-300">Here is one expert solution. Compare it with yours!</p>
+             
+             <div class="mt-6 bg-slate-900/50 p-6 rounded-lg space-y-4">
+                 <p><strong class="text-green-300">The Prompting:</strong> Adam packs his gym bag and puts it on the passenger seat of his car. It's the first thing he sees after work.</p>
+                 <p><strong class="text-green-300">The Invitation:</strong> He creates a high-energy "Gym Only" playlist. He only gets to listen to it while working out.</p>
+                 <p><strong class="text-green-300">The First Step:</strong> His goal isn't to "work out for an hour." It's to "put on his gym shoes and walk into the gym." He also chose a gym on his route home.</p>
+                 <p><strong class="text-green-300">The Harvest:</strong> After every workout, he treats himself to a delicious protein shake. An immediate, satisfying reward.</p>
+             </div>
+
+             <div class="mt-8 border-t border-slate-700 pt-6">
+                 <h3 class="text-2xl font-semibold text-white text-center">Your Turn</h3>
+                 <p class="mt-4 text-slate-300 text-center">You now have the four steps for planting your seeds. Don't try to plant an entire field tomorrow. Start with one.</p>
+                 <p class="mt-4 text-lg text-center font-semibold text-green-200">This is how transformation happens. Not in a single flash flood, but in the steady, faithful growth of small, intentional actions.</p>
+             </div>
+
+             <div class="mt-10 text-center">
+                 <button data-target="page-1" class="nav-btn bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg transition">Start Over</button>
+             </div>
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pages = document.querySelectorAll('.page');
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const habitChainContainer = document.getElementById('habit-chain');
+
+            // --- Page Navigation Logic ---
+            const showPage = (targetId) => {
+                pages.forEach(page => {
+                    if (!page.classList.contains('hidden')) {
+                         page.classList.add('opacity-0', 'hidden');
+                    }
+                });
+                const targetPage = document.getElementById(targetId);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                    setTimeout(() => {
+                        targetPage.classList.remove('opacity-0');
+                    }, 20); 
+                }
+                document.getElementById('book').scrollTo(0, 0);
+            };
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.target;
+                    showPage(targetId);
+                });
+            });
+            
+            // --- Habit Chain Logic ---
+            if (habitChainContainer) {
+                for (let i = 1; i <= 31; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('habit-dot', 'w-8', 'h-8', 'bg-slate-700', 'rounded-full', 'cursor-pointer', 'border-2', 'border-slate-600', 'transition-colors', 'flex', 'items-center', 'justify-center', 'text-xs', 'text-slate-400');
+                    dot.textContent = i;
+                    dot.addEventListener('click', () => {
+                        dot.classList.toggle('active');
+                    });
+                    habitChainContainer.appendChild(dot);
+                }
+            }
+
+            // Initially show the first page
+            const firstPage = document.getElementById('page-1');
+            firstPage.classList.remove('hidden');
+            firstPage.classList.remove('opacity-0');
+        });
+    </script>
+
+</body>
+</html>
